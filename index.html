@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Scavenger</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/92cff58b6a.js" crossorigin="anonymous"></script>
+    <script src="index.js" delay></script>
+</head>
+<body>
+    <div class="landing">
+        <nav>
+            <div class="nav__container">
+                <figure class="nav__logo">
+                    <img src="./assets/4876138-200.png" class="nav__logo--img">
+                    <h1 class="nav__logo--text">Movie Scavenger</h1>
+                </figure>
+                <ul class="nav__links">
+                    <li><a href="#" class="nav__link">Home</a></li>
+                    <li><a href="#" class="nav__link">Movies</a></li>
+                    <li><a href="#" class="nav__link nav__link--contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="movie__srch">
+            <h3 class="movie__srch--title">Browse Movies</h3>
+            <div class="movie__srch--bar">
+                <input type="text" class="movie__srch--input" placeholder="Search by Movie Title">
+                <button class="srch__btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>                </button>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </div>
+    <section id="search">
+        <div class="container">
+            <div class="row">
+                <h3 class="results__header">Search Results:</h3>
+                <div class="movie__list">
+                    <div class="movie__wrapper">
+                        <div class="movie">
+                            <figure class="movie__poster">
+                                <img src="./assets/istockphoto-1302499179-612x612.jpg" class="movie__poster--img">
+                            </figure>
+                            <div class="movie__title">Title</div>
+                            <div class="movie__details movie__year">Year</div>
+                            <div class="movie__details movie__rated">Rated</div>
+                            <div class="movie__details movie__released">Released</div>
+                            <div class="movie__details movie__runtime">Runtime</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
