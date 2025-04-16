@@ -1,6 +1,3 @@
-// https://www.omdbapi.com/?i=tt3896198&apikey=895e4858
-// https://www.omdbapi.com/?i=tt3896198&apikey=895e4858&s=fast
-
 const movieListEl = document.querySelector('.movie__list');
 const searchInput = document.querySelector('.movie__srch--input');
 const searchBtn = document.querySelector('.srch__btn');
