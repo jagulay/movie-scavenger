@@ -9,6 +9,12 @@ searchBtn.addEventListener("click", () => {
     }
   });
 
+searchInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        searchBtn.click();
+    }
+});
+
 async function searchMovies(query) {
     const res = await fetch(`https://www.omdbapi.com/?s=${encodeURIComponent(query)}&apikey=895e4858`);
     const data = await res.json();
@@ -18,7 +24,7 @@ async function searchMovies(query) {
     } else {
         movieListEl.innerHTML = `<p>No movies found for "${query}".</p>`;
     }
-}
+};
 
 function movieHTML(movie) {
     return `
