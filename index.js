@@ -2,23 +2,25 @@
 // https://www.omdbapi.com/?i=tt3896198&apikey=895e4858&s=fast
 
 const movieListEl = document.querySelector('.movie__list');
+const searchInput = document.querySelector('.movie__srch--input');
+const searchBtn = document.querySelector('.srch__btn');
 
-async function main() {
-    const movies = await fetch("https://www.omdbapi.com/?s=fast&apikey=895e4858");
-    const moviesData = await movies.json();
-    console.log(moviesData);
-
-    if (moviesData.Search) {
-        movieListEl.innerHTML = moviesData.Search.map((movie) => movieHTML(movie)).join("");
-    } else {
-        movieListEl.innerHTML = "<p>No movies found.</p>";
+searchBtn.addEventListener("click", () => {
+    const query = searchInput.value.trim();
+    if (query) {
+      searchMovies(query);
     }
-}
+  });
 
-main();
+async function searchMovies(query) {
+    const res = await fetch(`https://www.omdbapi.com/?s=${encodeURIComponent(query)}&apikey=895e4858`);
+    const data = await res.json();
 
-function showResults(movie) {
-
+    if (data.Search) {
+        movieListEl.innerHTML = data.Search.map((movie) => movieHTML(movie)).join("");
+    } else {
+        movieListEl.innerHTML = `<p>No movies found for "${query}".</p>`;
+    }
 }
 
 function movieHTML(movie) {
