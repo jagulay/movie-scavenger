@@ -4,7 +4,7 @@
 const movieListEl = document.querySelector('.movie__list');
 
 async function main() {
-    const movies = await fetch("https://www.omdbapi.com/?s=guardians&apikey=895e4858");
+    const movies = await fetch("https://www.omdbapi.com/?s=fast&apikey=895e4858");
     const moviesData = await movies.json();
     console.log(moviesData);
 
@@ -16,6 +16,10 @@ async function main() {
 }
 
 main();
+
+function showResults(movie) {
+
+}
 
 function movieHTML(movie) {
     return `
